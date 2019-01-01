@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+  <div class="container">
+    <h3>
+      <%= note ? note.title : "" %>
+    </h3>
+    <p>
+      <%= note ? note.body : "" %>
+    </p>
+    <p>Key:
+      <%= notekey %>
+    </p>
+    <% if (notekey) { %>
+    <hr />
+    <p>
+      <a href="notedestroy?key=<%= notekey %>">Delete<a />
+        <a href="noteedit?key=<%= notekey %>">Edit</a>
+    </p>
+    <% } %>
+
+  </div>
+
+</body>
+
+</html>
